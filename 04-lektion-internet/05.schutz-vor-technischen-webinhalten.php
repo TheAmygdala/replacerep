@@ -105,7 +105,10 @@ Das Zertifikat einer Internetseite können Sie aufrufen, in dem Sie in der Adres
         </div>
       </div>
       <div id="content-wrapper" class="highlightable">
-        <ul class="topics">
+      <?php
+        include("../00-weekly/php/weekly-filter.php");
+        $htmlString = <<<EOT
+          <ul class="topics">
           <li data-nav-id="/einleitung.php" class="dd-item"><a href="../einleitung.php">Einleitung<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/01-lektion-e-mails.php" class="dd-item"><a href="../01-lektion-e-mails.php">1. Lektion E-Mails<i class="fas fa-check read-icon"></i></a><ul id="subsections-c086ac896b3ee5509d006b237df7eb0d">
           <li data-nav-id="/01-lektion-e-mails/01.was-sind-emails.php" class="dd-item"><a href="../01-lektion-e-mails/01.was-sind-emails.php">Was sind E-Mails?<i class="fas fa-check read-icon"></i></a></li>
@@ -191,7 +194,11 @@ Das Zertifikat einer Internetseite können Sie aufrufen, in dem Sie in der Adres
           <li data-nav-id="/09-lektion-mein-arbeitsplatz/06.messenger.php" class="dd-item"><a href="../09-lektion-mein-arbeitsplatz/06.messenger.php">Messenger-Apps<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/09-lektion-mein-arbeitsplatz/07.verhalten-im-schadensfall.php" class="dd-item"><a href="../09-lektion-mein-arbeitsplatz/07.verhalten-im-schadensfall.php">Verhalten im Schadensfall<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/ansprechpersonen.php" class="dd-item"><a href="../ansprechpersonen.php">Infos / Ansprechpersonen<i class="fas fa-check read-icon"></i></a></li>
-        </ul>
+          </ul>
+        EOT;
+        $newTree = filterNavTree($htmlString);
+        echo $newTree;
+        ?>
         <div id="shortcuts">
           <div class="nav-title">Mehr</div>
           <ul>

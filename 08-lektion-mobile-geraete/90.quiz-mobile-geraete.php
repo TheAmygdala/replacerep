@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <?php include('../00-weekly/php/weekly-filter.php'); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.104.3">
@@ -51,9 +52,13 @@
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
-          <div class="navigation">
+             <?php $html = <<<EOT
+             <div class="navigation">
              <a class="nav nav-next" href="../09-lektion-mein-arbeitsplatz.php" title="Mein Arbeitsplatz (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
+             </div> 
+             EOT;
+             echo filterSingleNodeHref($html);
+             ?>
           <div class="navigation">
              <a class="nav nav-prev" href="../08-lektion-mobile-geraete/09.zusammenfassung.php" title="Zusammenfassung (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
           </div>
@@ -198,7 +203,10 @@ shuffle_answers: true
         </div>
       </div>
       <div id="content-wrapper" class="highlightable">
-        <ul class="topics">
+      <?php
+         
+        $htmlString = <<<EOT
+          <ul class="topics">
           <li data-nav-id="/einleitung.php" class="dd-item"><a href="../einleitung.php">Einleitung<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/01-lektion-e-mails.php" class="dd-item"><a href="../01-lektion-e-mails.php">1. Lektion E-Mails<i class="fas fa-check read-icon"></i></a><ul id="subsections-c086ac896b3ee5509d006b237df7eb0d">
           <li data-nav-id="/01-lektion-e-mails/01.was-sind-emails.php" class="dd-item"><a href="../01-lektion-e-mails/01.was-sind-emails.php">Was sind E-Mails?<i class="fas fa-check read-icon"></i></a></li>
@@ -284,7 +292,11 @@ shuffle_answers: true
           <li data-nav-id="/09-lektion-mein-arbeitsplatz/06.messenger.php" class="dd-item"><a href="../09-lektion-mein-arbeitsplatz/06.messenger.php">Messenger-Apps<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/09-lektion-mein-arbeitsplatz/07.verhalten-im-schadensfall.php" class="dd-item"><a href="../09-lektion-mein-arbeitsplatz/07.verhalten-im-schadensfall.php">Verhalten im Schadensfall<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/ansprechpersonen.php" class="dd-item"><a href="../ansprechpersonen.php">Infos / Ansprechpersonen<i class="fas fa-check read-icon"></i></a></li>
-        </ul>
+          </ul>
+        EOT;
+        $newTree = filterNavTree($htmlString);
+        echo $newTree;
+        ?>
         <div id="shortcuts">
           <div class="nav-title">Mehr</div>
           <ul>

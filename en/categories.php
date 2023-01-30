@@ -89,8 +89,15 @@
         </div>
       </div>
       <div id="content-wrapper" class="highlightable">
-        <ul class="topics">
-        </ul>
+      <?php
+        include("../00-weekly/php/weekly-filter.php");
+        $htmlString = <<<EOT
+          <ul class="topics">
+          </ul>
+        EOT;
+        $newTree = filterNavTree($htmlString);
+        echo $newTree;
+        ?>
         <div id="shortcuts">
           <div class="nav-title">More</div>
           <ul>
