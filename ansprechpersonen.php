@@ -76,18 +76,18 @@
 
 
 <h3 id="informationssicherheit">Informationssicherheit</h3>
-<p><strong>Max Mustermann</strong></p>
-<p>Markt 8, 48653 Musterstadt</p>
-<p>Telefon: (02541) 1234-5678</p>
-<p>E-Mail: <a href="mailto:max.mustermann@musterstadt.de">max.mustermann@musterstadt.de</a></p>
+<p><strong>Michael Schlömer</strong></p>
+<p>Friesenring 43, 48147 Münster</p>
+<p>Telefon: (0251) 275-3610</p>
+<p>E-Mail: <a href="mailto:informationssicherheit.muenster@polizei.nrw.de">Informationssicherheit.Muenster@polizei.nrw.de</a></p>
 <h3 id="datenschutz">Datenschutz</h3>
-<p><strong>Maxi Musterfrau</strong></p>
-<p>Markt 8, 48653 Musterstadt</p>
-<p>Telefon: (02541) 1234-5679</p>
-<p>E-Mail: <a href="mailto:maxi.musterfrau@musterstadt.de">maxi.musterfrau@musterstadt.de</a></p>
+<p><strong>Christoph Attermeyer</strong></p>
+<p>Friesenring 43, 48147 Münster</p>
+<p>Telefon: (0251) 275-2150</p>
+<p>E-Mail: <a href="mailto:dsb.muenster@polizei.nrw.de">DSB.Muenster@polizei.nrw.de</a></p>
 <h3 id="it-service">IT-Service</h3>
-<p>Telefon: (02541) 1234-9999</p>
-<p>E-Mail: <a href="mailto:it-service@musterstadt.de">it-service@musterstadt.de</a></p>
+<p>Telefon: (0251) 275-4444</p>
+<p>E-Mail: <a href="mailto:za3.1.muenster@polizei.nrw.de">ZA3.1.Muenster@polizei.nrw.de</a></p>
 
             <footer class="footline">
             </footer>
