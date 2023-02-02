@@ -57,7 +57,7 @@
              <a class="nav nav-next" href="../07-lektion-cloud.php" title="Cloud (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
              </div> 
              EOT;
-             echo filterSingleNodeHref($html);
+             echo filterNavArrow($html);
              ?>
           <div class="navigation">
              <a class="nav nav-prev" href="../06-lektion-social-media/03.social-media-sicher-nutzen.php" title="Social Media sicher nutzen (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
@@ -184,7 +184,7 @@ shuffle_answers: true
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="../index.php">
-  <img src="../images/logo.jpg" width="220" height="80" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
+  <img src="../images/logo.jpg" width="220" height="70" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
 </a>
 
         </div>

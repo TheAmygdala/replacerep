@@ -124,16 +124,13 @@
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="../index.php">
-  <img src="../images/logo.jpg" width="220" height="80" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
+  <img src="../images/logo.jpg" width="220" height="70" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
 </a>
 
         </div>
       </div>
       <div id="content-wrapper" class="highlightable">
       <?php
-        include("../00-weekly/php/weekly-filter.php");
-        $htmlString = <<<EOT
-        <?php
         include("../00-weekly/php/weekly-filter.php");
         $htmlString = <<<EOT
           <ul class="topics">

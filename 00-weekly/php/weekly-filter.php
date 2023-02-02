@@ -11,15 +11,16 @@ function filterNavTree(string $fullNavTree): string
     $navTree = loadHtmlWithUTF8($fullNavTree);
     $listItems = $navTree->getElementsByTagName('li');
 
+    /** $i starts with 1 and ends length-1 to display <li> "Introduction" and "Contact" */
     /** @var DomNodeList $listItems */
-    for ($i = 0; $i < $listItems->length; $i++) {
+    for ($i = 1; $i < $listItems->length -1; $i++) {
         /** @var DomElement $node */
         $node = $listItems->item($i);
         $unfilteredHref = $node->getAttribute("data-nav-id");
         $courseDigits = filterCourseHrefToInt($unfilteredHref, 1, 2);
-        $isWeekValid = isWeekValid($courseDigits);
+        $isCourseAvailable = isCourseAvailable($courseDigits);
 
-        if (!$isWeekValid)
+        if (!$isCourseAvailable)
         {
             $node->parentNode->removeChild($node);
             $i--;
@@ -35,16 +36,17 @@ function filterNavTree(string $fullNavTree): string
  * @param string $hrefAttribute Tag name which is supposed to be selected.
  * @return string Returns the filtered navigation arrow as a string.
  */
-function filterSingleNodeHref(string $nodeWithHref, string $hrefAttribute = "href"): string
+function filterNavArrow(string $nodeWithHref, string $hrefAttribute = "href"): string
 {
     /** @var \DOMElement $nodeItem */
     $node = loadHtmlWithUTF8($nodeWithHref);
     $itemNode = $node->getElementsByTagName('a')->item(0);
     $unfilteredHref = $itemNode->getAttribute($hrefAttribute);
-    $courseDigits = filterCourseHrefToInt($unfilteredHref, 3, 4);
-    $isWeekValid = isWeekValid($courseDigits);
 
-    if (!$isWeekValid)
+    $courseDigits = filterCourseHrefToInt($unfilteredHref, 3, 4);
+    $isCourseAvailable = isCourseAvailable($courseDigits);
+
+    if (!$isCourseAvailable)
     {
         $itemNode->parentNode->removeChild($itemNode);
     }
@@ -77,7 +79,7 @@ function loadHtmlWithUTF8(string $html): \DOMDocument
 function getCurrentCalenderWeek(): int
 {
     $date = time();
-    return intval(date("W", $date)); 
+    return intval(date("W", $date));
 }
 
 /**
@@ -86,19 +88,11 @@ function getCurrentCalenderWeek(): int
  * @param int $courseNumber
  * @return bool Returns a boolean to decide if a week is valid.
  */
-function isWeekValid(int $courseDigits): bool
+function isCourseAvailable(int $courseDigits): bool
 {
-    $startCw = 4;
+    $startCw = -2;
     $currentCw = getCurrentCalenderWeek();
-    $validationWeek = $currentCw - $startCw;
-
-    // If a string is casted into 0 by inval() because the href has no course number as leading figures, the list item should still be rendered.
-    // That way <li> "introduction" and "contact" is always rendered. 
-    if ($courseDigits == 0)
-    {
-        return true;
-    }
-
+    $validationWeek = $currentCw - $startCw +1;
     return $courseDigits <= $validationWeek;
 }
 

@@ -37,7 +37,7 @@
       var baseUriFull='/';
       window.variants && variants.init( [ 'normal', 'dark-mode', 'high-contrast' ] );
     </script>
-    
+    <script src="../js/jquery.min.js" defer></script>
 	<meta name="date" content="18 Dec 22">
 
   </head>
@@ -102,7 +102,7 @@
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="../index.php">
-  <img src="../images/logo.jpg" width="220" height="80" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
+  <img src="../images/logo.jpg" width="220" height="70" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
 </a>
 
         </div>

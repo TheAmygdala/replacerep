@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <?php include("./00-weekly/php/weekly-filter.php"); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.104.3">
@@ -48,9 +49,14 @@
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
-          <div class="navigation">
+        <?php
+             $html = <<<EOT
+             <div class="navigation">
              <a class="nav nav-next" href="./01-lektion-e-mails.php" title="E-Mails (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
+             </div> 
+             EOT;
+             echo filterNavArrow($html);
+             ?>
           <div class="navigation">
              <a class="nav nav-prev" href="./" title="Start (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
           </div>
@@ -107,14 +113,13 @@
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="./index.php">
-  <img src="./images/logo.jpg" width="220" height="80" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
+  <img src="./images/logo.jpg" width="220" height="70" alt="BITS Logo" title="BITS | Behörden-IT-Sicherheitstraining">
 </a>
 
         </div>
       </div>
       <div id="content-wrapper" class="highlightable">
       <?php
-        include("./00-weekly/php/weekly-filter.php");
         $htmlString = <<<EOT
           <ul class="topics">
           <li data-nav-id="/einleitung.php" class="dd-item active"><a href="./einleitung.php">Einleitung<i class="fas fa-check read-icon"></i></a></li>
