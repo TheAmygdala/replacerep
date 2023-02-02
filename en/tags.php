@@ -90,7 +90,7 @@
       </div>
       <div id="content-wrapper" class="highlightable">
       <?php
-        include("../00-weekly/php/weekly-filter.php");
+        include("../00-mods\weekly-module\src\php\weekly-filter.php");
         $htmlString = <<<EOT
           <ul class="topics">
           </ul>

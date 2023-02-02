@@ -90,7 +90,7 @@ function getCurrentCalenderWeek(): int
  */
 function isCourseAvailable(int $courseDigits): bool
 {
-    $startCw = -2;
+    $startCw = 5;
     $currentCw = getCurrentCalenderWeek();
     $validationWeek = $currentCw - $startCw +1;
     return $courseDigits <= $validationWeek;

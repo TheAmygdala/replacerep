@@ -98,7 +98,7 @@
       </div>
       <div id="content-wrapper" class="highlightable">
       <?php
-        include("../00-weekly/php/weekly-filter.php");
+        include("../00-mods\weekly-module\src\php\weekly-filter.php");
         $htmlString = <<<EOT
           <ul class="topics">
           <li data-nav-id="/einleitung.php" class="dd-item"><a href="../einleitung.php">Einleitung<i class="fas fa-check read-icon"></i></a></li>
