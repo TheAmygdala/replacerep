@@ -68,10 +68,19 @@ class LogParser
         
         $filteredLine['ip'] = $ip[0]?? null;
         $filteredLine['time'] = $time[0]?? null;
-        $filteredLine['toRoute'] = $toRoute[0]?? null;
-        $filteredLine['fromRoute'] = $fromRoute[0]?? null;
-
+        $filteredLine['toRoute'] = isset($toRoute[0])? $this->cleanRoute($toRoute[0]) : null;
+        $filteredLine['fromRoute'] = isset($fromRoute[0])? $this->cleanRoute($fromRoute[0]) : null;
+        
         return $filteredLine;
+    }
+
+    private function cleanRoute(string $route): string|null
+    {
+        $resultString = strval(str_replace(' ', '', $route));
+        if ($resultString === '') {
+            return null;
+        }
+        return $resultString;
     }
 }
 
