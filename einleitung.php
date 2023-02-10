@@ -2,8 +2,7 @@
 <html lang="de">
   <head>
     <?php 
-    include("./00-mods\weekly-module\src\php\weekly-filter.php"); 
-    include("./00-mods/counter-module/src/bootstrap.php");
+    include("./00-mods\weekly-module\src\php\weekly-filter.php");
     ?>
     
     <meta charset="utf-8">

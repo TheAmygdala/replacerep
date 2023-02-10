@@ -20,13 +20,14 @@ class LogParser
      * @param array $unfilteredLines Array with apaches logfiles
      * @return array Structure: [0] => [[ip]=> "123.123.123.123", [time] => "[02/Feb/2023:11:02:44 +0100]", [toRoute] => "clicked/route/navigated/to", [fromRoute] => "previous/route/coming/from"]
      */
-    public function parseArray(array $unfilteredLines): array 
+    public function parseFile(string $path): array 
     {
+        $file = $this->getFile($path);
         $filteredArray = [];
-        $linesLength = count($unfilteredLines);
+        $linesLength = count($file);
         for ($i = 0; $i < $linesLength; $i++)
         {
-            $parsedLine = $this->parseLine($unfilteredLines[$i]);
+            $parsedLine = $this->parseLine($file[$i]);
             if ($parsedLine == null)
             {
                 continue;
@@ -81,6 +82,11 @@ class LogParser
             return null;
         }
         return $resultString;
+    }
+
+    private function getFile(string $path): array
+    {
+        return file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     }
 }
 
